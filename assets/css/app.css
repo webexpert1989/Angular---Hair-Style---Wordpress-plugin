@@ -1,0 +1,751 @@
+/**************************************************************
+ *
+ * app stylesheet
+ *
+ **************************************************************/
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.hair {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    z-index: 99;
+}
+.hair, .hair * {
+    font-family: "Avenir LT Std 55 Roman", sans-serif;
+    box-sizing: border-box;
+    outline: none;
+    word-break: break-word;
+    color: #464347;
+}
+
+.hair [hair-wrap] {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 1600px;
+    height: 1200px;
+    max-height: 1200px;
+    min-height: 576px;
+    border: 1px solid #e6e6e6;
+    background-color: #f2f1f3;
+    transform-origin: 0 0;
+}
+
+.hair [hair-wrap]:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.hair .hidden {
+    display: none !important;
+}
+
+.hair .hair-groups ul,
+.hair .hair-groups li {
+    margin: 0;
+    padding: 0;
+}
+
+.hair .hair-groups .color-group button {
+	border: solid 1px #fff;
+	line-height: 18px;
+	background: #f2f1f3 !important;
+}
+
+.hair .hair-groups button.color-group-button-0 {
+	color: #fff;
+	background: #795548;
+}
+.hair .hair-groups .color-group-0 button {
+	color: #795548;
+}
+
+.hair .hair-groups button.color-group-button-1 {
+	color: #fff;
+	background: #6dab3c;
+}
+.hair .hair-groups .color-group-1 button {
+	color: #6dab3c;
+}
+
+.hair .hair-groups button.color-group-button-2 {
+	color: #fff;
+	background: #f4524d;
+}
+.hair .hair-groups .color-group-2 button {
+	color: #f4524d;
+}
+
+.hair li {
+    list-style: none;
+}
+
+.hair label {
+    margin: 0;
+    font-weight: 400;
+}
+
+.hair a,
+.hair a:hover,
+.hair a:active {
+    text-decoration: none;
+}
+
+.hair .clear {
+    clear: both;
+}
+
+.hair:after,
+.hair .after-clear:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.hair img {
+    max-width: 100%;
+}
+
+/* form */
+.hair .hair-front {
+    float: left;
+    position: relative;
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hair .hair-front .hair-mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 370px;
+    height: 100%;
+    background: transparent url(../images/mask.png) top right no-repeat;
+    background-size: 100% 100%;
+    z-index: 99;
+}
+
+.hair .hair-front .hair-group {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 8;
+}
+.hair .hair-front .hair-group img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    
+    z-index: 9;
+    transition: all 300ms ease-in-out;
+}
+
+.hair .hair-front .hair-group img.active {
+    opacity: 1;
+    z-index: 999;
+    animation-name: fadein;
+    animation-timing-function: ease-in-out;
+    animation-duration: 300ms;
+}
+
+.hair .hair-front .hair-group img.hair-main {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.hair .hair-detail {
+    float: left;
+    position: relative;
+    margin-left: -30px;
+    padding-right: 20px;
+    width: calc(40% + 30px);
+    height: 100%;
+    background-color: #f2f1f3;
+    z-index: 99;
+}
+
+.hair .hair-info {
+    padding: 0 30px 0 10px;
+}
+
+.hair .hair-info h2 {
+    margin: 30px 0 10px 0;
+    font-size: 32px;
+	letter-spacing: 0
+}
+.hair .hair-info h2:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.hair .hair-info h2 span {
+    float: left;
+	font-size: 120%;
+}
+.hair .hair-info h2 sup {
+	float: left;
+    margin-top: 13px;
+    margin-left: 3px;
+    font-size: 50%;
+}
+
+.hair .hair-info p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.hair .hair-groups {
+    padding: 0 0 10px 0;
+}
+
+.hair .hair-groups:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.hair .hair-groups li {
+    float: left;
+    position: relative;
+    padding: 0 10px;
+    width: calc((100% - 60px) / 3);
+}
+
+.hair .hair-groups li:last-child {
+    margin-right: 0;
+}
+
+.hair .hair-groups li button {
+    margin: 0;
+    padding: 10px;
+    min-width: 150px;
+    font-size: 18px;
+    background-color: #282828;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+}
+.hair .hair-groups li button,
+.hair .hair-groups li button * {
+    color: #fff;
+}
+
+.hair .hair-groups li ul {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.hair .hair-groups li ul li {
+    width: 100%;
+}
+
+.hair .hair-groups li ul li button {
+    background-color: #fbae00;
+    border-top: 1px solid #fff;
+}
+
+.hair .hair-groups li ul li:first-child button {
+    border-top-width: 0;
+}
+
+.hair .hair-groups .slick-list {
+    overflow: visible;
+}
+
+.hair .hair-colors {
+    margin-top: 20px;
+    height: calc(100% - 280px);
+    overflow-y: auto;
+}
+
+.hair .hair-colors h3.hair-color-group-title {
+    margin: 10px;
+    font-size: 24px;
+}
+
+.hair .hair-colors [hair-group] li {
+    float: left;
+    position: relative;
+    margin: 5px 3px;
+    width: calc(25% - 6px);
+    max-width: 120px;
+    text-align: center;
+}
+
+.hair .hair-colors [hair-group] li .hair-color {
+    position: relative;
+    display: inline-block;
+}
+
+.hair .hair-colors [hair-group] li.active .hair-color:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 36px;
+    height: 36px;
+    background: transparent url(../images/checked.png) center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.hair .hair-colors [hair-group] li img {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #fff;
+    transition: border 300ms ease-in-out;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.hair .hair-colors [hair-group] li span {
+    padding: 5px;
+    height: 36px;
+    font-size: 14px;
+    line-height: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+
+.hair .hair-colors [hair-group] li.active-shop * {
+    opacity: 0.4;
+}
+
+.hair .hair-colors [hair-group] li a.hair-buy-btn {
+    position: absolute;
+    top: 50%;
+    padding: 10px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    transform: translateY(-50%);
+    display: block;
+    opacity: 1;
+    border: 1px solid #333;
+    z-index: 9;
+}
+
+.hair .hair-colors [hair-group] li a.hair-buy-btn:active {
+    opacity: 0.6;
+}
+
+.hair .hair-colors [hair-group]:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.hair .hair-order {
+    margin: 30px 0 0 -120px;  
+}
+
+.hair .hair-order .hair-sel {
+    float: left;
+    padding-top: 5px;
+    font-size: 24px;
+}
+
+.hair .hair-order .hair-sel #hair-color-num {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.hair .hair-order .hair-action {
+    float: right;
+    margin-right: 20px;
+}
+
+.hair .hair-order .hair-action .hair-order-btn {
+    padding: 15px 40px 12px 40px;
+    line-height: 46px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #282828;
+    border-width: 0;
+    text-transform: uppercase;
+}
+.hair .hair-order .hair-action .hair-order-btn span {
+    /*font-size: 150%;*/
+    color: #fff;
+}
+
+/* desktop */
+
+@media screen and (min-width: 769px){
+    
+    .hair .hair-groups li:hover > ul {
+        height: auto;
+        opacity: 1;
+        transition: opacity 300ms ease-in-out;
+    }
+}
+
+@media screen and (max-width: 1300px){    
+    .hair .hair-groups li button {
+        padding: 8px 10px;
+        min-width: initial;
+        font-size: 14px;
+    }
+    
+    .hair .hair-order .hair-action .hair-order-btn {
+        padding: 10px 40px 8px 40px;
+        line-height: 36px;
+        font-size: 16px;
+    }
+    
+    .hair .hair-order .hair-sel #hair-color-num {
+        font-size: 28px;
+    }
+    
+    .hair .hair-colors {
+        height: calc(100% - 260px);
+    }
+    
+    .hair .hair-colors [hair-group] li img {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media screen and (max-width: 1170px){    
+    .hair .hair-info h2 {
+        font-size: 28px;
+    }
+    
+    .hair .hair-colors [hair-group] li img {
+        width: 80px;
+        height: 80px;
+        border: 2px solid #fff;
+    }
+}
+
+@media screen and (max-height: 800px){
+    .hair .hair-info h2 {
+        margin: 20px 0 10px 0;
+        font-size: 28px;
+    }
+    
+    .hair .hair-detail {
+        padding-right: 10px;
+    }
+    
+    .hair .hair-groups li button {
+        padding: 5px 10px;
+    }
+    
+    .hair .hair-colors {
+        margin-top: 10px;
+    }
+    
+    .hair .hair-colors {
+        height: calc(100% - 210px);
+    }
+    
+    .hair .hair-colors [hair-group] li {
+        margin: 3px;
+    }
+    
+    .hair .hair-colors [hair-group] li img {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .hair .hair-order .hair-action .hair-order-btn {
+        padding: 12px 40px 10px 40px;
+        line-height: 42px;
+        font-size: 16px;
+    }
+    
+    .hair .hair-order {
+        margin: 20px 0 0 -120px;
+    }
+}
+
+@media screen and (max-width: 1024px){    
+    .hair .hair-info h2 {
+        margin: 20px 0 10px 0;
+        font-size: 24px;
+    }
+    
+    .hair .hair-colors {
+        margin-top: 10px;
+        height: calc(100% - 220px);
+    }
+    
+    .hair .hair-colors [hair-group] li {
+        margin: 3px;
+    }
+        
+    .hair .hair-colors [hair-group] li img {
+        width: 80px;
+        height: 80px;
+        border: 2px solid #fff;
+    }
+    
+    
+    .hair .hair-order .hair-sel {
+        font-size: 18px;
+    }
+    
+    .hair .hair-order .hair-sel #hair-color-num {
+        font-size: 24px;
+    }
+
+    .hair .hair-order .hair-action .hair-order-btn {
+        padding: 10px 20px 8px 20px;
+        line-height: 32px;
+        font-size: 14px;
+    }
+   
+}
+
+@media screen and (max-width: 993px){
+    .hair .hair-groups li {
+        padding: 0 5px;
+        width: calc(100% / 3);
+    }
+
+    .hair .hair-colors [hair-group] li img {
+        width: 70px;
+        height: 70px;
+        border: 1px solid #fff;
+    }
+    
+    .hair .hair-colors [hair-group] li.active .hair-color:after {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+@media screen and (max-width: 840px){
+    .hair .hair-info h2 {
+        margin: 15px 0 10px 0;
+        font-size: 20px;
+    }
+
+    .hair .hair-groups li {
+        padding: 0 5px;
+        width: calc(100% / 3);
+    }
+    
+    .hair .hair-colors {
+        height: calc(100% - 210px);
+    }
+    
+
+    .hair .hair-colors [hair-group] li img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .hair .hair-colors [hair-group] li span {
+        padding: 2px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+
+/* mobile responsive */
+@media screen and (max-width: 768px){
+	
+    .hidden-header {
+    	display: none !important;
+    }
+    
+    #header {
+    	background: transparent !important;
+    	box-shadow: none !important;
+    	border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+    }
+    
+    .hair [hair-wrap] {
+        width: 100%;
+        height: auto;
+        max-height: none;
+    }
+    
+    .hair .hair-front,
+    .hair .hair-detail {
+        float: none;
+        margin: 0;
+        width: 100%;
+        height: auto;
+    }
+     
+    .hair .hair-front {
+        height: 640px;
+    }
+    
+    .hair .hair-front .hair-mask {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 194px;
+        background-image: url(../images/mask-mobile.png);
+        z-index: 99;
+    }
+    
+    .hair .hair-detail {
+        padding: 0;
+        background-color: #f8f6f9;
+    }
+    
+    .hair .hair-info {
+        display: none;
+    }
+    
+    .hair .hair-info h2 {
+        margin: 0;
+        font-size: 24px;
+        text-align: center;
+    }
+    
+    .hair .hair-info p {
+        display: none;
+    }
+    
+    .hair .hair-groups {
+        position: relative;
+        padding: 0 0 30px 0;
+        z-index: 99;
+    }
+
+    .hair .hair-groups li > ul.active {
+        height: auto;
+        opacity: 1;
+        transition: opacity 300ms ease-in-out;
+    }
+    
+    .hair .hair-colors {
+        margin-top: 10px;
+        height: auto;
+    }
+    
+    .hair .hair-colors h3.hair-color-group-title {
+        margin: 0;
+        text-align: center;
+    }
+    
+    .hair .hair-colors [hair-group] li .hair-color
+    
+    .hair .hair-colors [hair-group] li img {
+        width: 96px;
+        height: 96px;
+    }
+    
+    .hair .hair-order {
+        margin: 0;
+        padding: 5px 0 30px 0;
+        text-align: center;
+    }
+    
+    .hair .hair-order .hair-sel,
+    .hair .hair-order .hair-action {
+        float: none;
+    }
+    
+    .hair .hair-order .hair-action {
+        display: none;
+    }
+    
+    .hair .hair-order .hair-sel {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    .hair .hair-order .hair-sel #hair-color-num {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 640px){    
+    .hair .hair-colors [hair-group] li img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 520px){      
+    .hair .hair-front {
+        height: 460px;
+    }
+    
+    .hair .hair-colors [hair-group] li img {
+        width: 96px;
+        height: 96px;
+    }
+}
+
+@media screen and (max-width: 420px){      
+    .hair .hair-front {
+        height: 360px;
+    }
+    
+    .hair .hair-groups {
+        padding: 0;
+    }
+    
+    .hair .hair-groups li button {
+        padding: 5px;
+    }
+    
+    .hair .hair-order {
+        padding: 5px 0 10px 0;
+    }
+    
+    .hair .hair-order .hair-sel {
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
+
+@media screen and (max-width: 360px){      
+    .hair .hair-front {
+        height: 350px;
+    }
+}
+
+/**/
+.fullwidth_content {
+    height: auto !important;
+    overflow: auto !important;
+}
